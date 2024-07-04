@@ -7,6 +7,7 @@
 
     app.use(cors({
         origin: 'https://news-application-3rqa.vercel.app',
+        // origin : 'http://localhost:3000',
         credentials: true
     }));
 

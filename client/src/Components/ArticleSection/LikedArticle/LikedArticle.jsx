@@ -72,7 +72,7 @@ const LikedArticle = () => {
   }
 
   return (
-    <div>
+    <div className=' py-6'>
       <Toaster />
       <h1 className='font-semibold text-3xl font-serif pl-12 pt-6'>Liked Articles</h1>
       <div className='flex flex-col space-y-7 items-center mt-6'>

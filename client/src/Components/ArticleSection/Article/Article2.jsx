@@ -6,7 +6,7 @@ import axios from 'axios';
 const Article2 = ({ hamburger, article }) => {
   const navigate = useNavigate();
   const [editDelete, setEditDelete] = useState(false);
-  const width = hamburger ? 'lg:w-[455px] lg:h-72' : 'w-full h-auto';
+  const width = hamburger ? 'lg:w-[455px] lg:h-72' : 'w-full h-72';
   const maxLength = 120;
   const summary = article.summary.length > maxLength
     ? `${article.summary.slice(0, maxLength)}...`
@@ -80,13 +80,13 @@ const Article2 = ({ hamburger, article }) => {
 
   return (
     <>
-      <div className={`relative ${width} hover:translate-y-[-2px] transition-transform duration-150 cursor-pointer`}>
+      <div className={`relative ${width}  hover:translate-y-[-2px] transition-transform duration-150 cursor-pointer`}>
         <MdOutlineMoreVert
           onClick={() => setEditDelete(!editDelete)}
           className="text-3xl absolute z-20 top-2 text-white right-2 cursor-pointer"
         />
         <div className='w-full h-auto' onClick={() => navigateArticleDetails(article._id)}>
-          <img className="w-full h-64 lg:h-auto rounded-xl object-cover" src={article.image} alt="Article" />
+          <img className={`w-full ${width} rounded-xl object-cover`} src={article.image} alt="Article" />
           <div className='absolute text-white bottom-2/3 top-44 lg:top-auto lg:bottom-2 px-4 space-y-1 bg-gradient-to-t from-black via-transparent to-transparent rounded-b-xl'>
             <h1 className='text-3xl lg:text-2xl font-semibold tracking-wide pb-1'>{summary}</h1>
             <div className='flex space-x-2 text-sm lg:text-xs'>
